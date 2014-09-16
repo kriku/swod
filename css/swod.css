@@ -27,6 +27,14 @@ body {
   height: 100%;
 }
 
+.slide.w {
+  background-size: 100% auto;
+}
+
+.slide.h {
+  background-size: auto 100%;
+}
+
 .slide.scroll {
   background-attachment: scroll!important;
 }
@@ -161,38 +169,6 @@ body {
   top: 75%;
 }
 
-.container {
-  position: absolute;
-  width: 40%;
-  height: 60%;
-  right: 10%;
-  top: 20%;
-}
-
-.container2 {
-  position: relative;
-  margin-left: 54%;
-  width: 40%;
-  height: 58%;
-  top: 26%;
-  /*line-height: 12.5%;*/
-}
-
-.container2 li {
-  display: block;
-  height: 25%;
-  list-style: none;
-  font-size: 1.4em;
-}
-
-p {
-  font-size: 1em;
-}
-
-p.lead {
-  font-size: 1.5em;
-}
-
 #watch {
   margin-top: 1.2em;
   position: relative;
@@ -222,26 +198,9 @@ p.lead {
   background-position: -30px 0;
 }
 
-.container-mid {
-  position: absolute;
-  text-align: center;
-  width: 60%;
-  height: 60%;
-  left: 20%;
-  top: 20%;
-}
-
-.container-mid > img {
-  cursor: pointer;
-}
-
-.container-mid div {
-  margin-bottom: 1em;
-}
-
 #more {
   font-size: 1em;
-   /*display: none;*/
+   display: none;
 }
 
 #more input[type="text"] {
@@ -276,4 +235,53 @@ p.lead {
 
 #more input[type="button"]:focus {
   outline: none;
+}
+
+.container {
+  position: absolute;
+  width: 40%;
+  height: 60%;
+  right: 10%;
+  top: 20%;
+}
+
+.container2 {
+  position: relative;
+  margin-left: 54%;
+  width: 40%;
+  height: 58%;
+  top: 26%;
+  /*line-height: 12.5%;*/
+}
+
+.container2 li {
+  display: block;
+  height: 25%;
+  list-style: none;
+  font-size: 1.4em;
+}
+
+p {
+  font-size: 1em;
+}
+
+p.lead {
+  font-size: 1.5em;
+}
+
+.container-mid {
+  position: absolute;
+  text-align: center;
+  width: 60%;
+  height: 60%;
+  left: 20%;
+  top: 20%;
+}
+
+.container-mid div {
+  margin-bottom: 1em;
+}
+
+img.link {
+  cursor: pointer;
 }

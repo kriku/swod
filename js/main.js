@@ -24,6 +24,9 @@ var scr0 = new Slide(document.getElementById('scr0')),
     labels = document.getElementById('labels'),
     toLong = document.getElementById('toLong'),
     digits = document.getElementById('digits'),
+    appStore = document.getElementById('appStore'),
+    gooPlay = document.getElementById('gooPlay'),
+    more = document.getElementById('more'),
     imbue = document.getElementById('imbue');
 
 window.scrollTo(0, 0);
@@ -192,5 +195,11 @@ onEvent(window, 'scroll', onScroll);
 onEvent(window, 'resize', onResize);
 onEvent(window, 'load', onResize);
 onEvent(arrow, 'click', function () { window.scrollBy( 0, 100 ); });
+onEvent(appStore, 'click', function () {
+  more.style.display = 'block';
+});
+onEvent(gooPlay, 'click', function () {
+  more.style.display = 'block';
+});
 
 } )(window);
