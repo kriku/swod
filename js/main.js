@@ -50,7 +50,8 @@ var toSlide = function (oldslide, slide) {
   // scr5.hide();
   // fing.hide();
   // mock.hide();
-
+  if (slide<0) slide = 0;
+  if (slide>8) slide = 8;
   slides[slide].show();
   slides[oldslide].show();
     if (slide>3) {
