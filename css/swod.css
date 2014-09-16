@@ -205,9 +205,9 @@ body {
 
 #more input[type="text"] {
   font-size: 1.2em;
+  height: 30px;
   margin: 0;
   border-radius: 20px 0 0 20px;
-  height: 30px;
   padding: 5px 20px;
   background: #eee;
 }
@@ -219,10 +219,11 @@ body {
 }
 
 #more input[type="button"] {
+  height: 30px;
   margin: 0;
   color: #fff;
   font-size: 1.2em;
-  padding: 5px 20px;
+  /*padding: 1px 20px;*/
   border-radius: 0 20px 20px 0;
   border: 2px solid #00a0d2;
   height: 44px;
