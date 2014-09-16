@@ -136,11 +136,10 @@ var toSlide = function (oldslide, slide) {
 toSlide(0, 0);
 
 
-var scrolling = function (n, step) {
-  // return ;
+var scrolling = function (interval, step) {
   return setInterval(function () {
     window.scrollBy( 0, step );
-  }, n);
+  }, interval);
 }
 
 // laggs
