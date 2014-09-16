@@ -56,6 +56,53 @@ body {
   z-index: 15;
 }
 
+/* retina fix*/
+@media all and (-webkit-min-device-pixel-ratio: 1.5) {
+  #scr0     { background-image: url(img/1@2x.png);        }
+  #scr1     { background-image: url(img/2@2x.png);        }
+  #scr2     { background-image: url(img/3@2x.png);        }
+  #scr3     { background-image: url(img/4@2x.png);        }
+  #scr4     { background-image: url(img/5@2x.png);        }
+  #mockup   { background-image: url(img/mockup@2x.png);   }
+  #fingers  { background-image: url(img/fingers@2x.png);  }
+}
+
+
+#gooPlay {
+  background-image: url(img/googlePlay.png);
+}
+
+#appStore { 
+  background-image: url(img/appStore.png);
+}
+
+#logoFin {
+  background-image: url(img/logo_last.png);
+}
+
+span.link {
+  cursor: pointer;
+  display: inline-block;
+  height: 48px;
+  width: 147px;
+}
+
+span.logoCut {
+  display: inline-block;
+  height: 67px;
+  width: 226px;
+}
+
+@media all and (-webkit-min-device-pixel-ratio: 1.5) {
+  #appStore { background-image: url(img/appStore@2x.png);   }
+  #gooPlay  { background-image: url(img/googlePlay@2x.png); }
+  #logoFin  { background-image: url(img/logo_last@2x.png); }
+
+  span.link     { width: 292px;   height: 94px;   }
+  span.logoCut  { width: 450px;   height: 132px;  }
+}
+
+
 #mockup {
   background-image: url(img/mockup.png);
   z-index: 8;
@@ -204,12 +251,13 @@ body {
 }
 
 #more input[type="text"] {
-  font-size: 1.2em;
-  height: 30px;
+  font-size: 1em;
+  /*height: 30px;*/
   margin: 0;
   border-radius: 20px 0 0 20px;
   padding: 5px 20px;
   background: #eee;
+  padding: 0.2em 1em;
 }
 
 #more input[type="text"]:focus {
@@ -219,14 +267,15 @@ body {
 }
 
 #more input[type="button"] {
-  height: 30px;
+  /*height: 30px;*/
   margin: 0;
   color: #fff;
-  font-size: 1.2em;
+  font-size: 1em;
   /*padding: 1px 20px;*/
+  padding: 0.2em 1em;
   border-radius: 0 20px 20px 0;
   border: 2px solid #00a0d2;
-  height: 44px;
+  /*height: 44px;*/
   background: #00a0d2;
   cursor: pointer;
 }
@@ -240,7 +289,7 @@ body {
 
 .container {
   position: absolute;
-  width: 40%;
+  width: 80%;
   height: 60%;
   right: 10%;
   top: 20%;
@@ -282,10 +331,6 @@ p.lead {
 
 .container-mid div {
   margin-bottom: 1em;
-}
-
-img.link {
-  cursor: pointer;
 }
 
 #video {
