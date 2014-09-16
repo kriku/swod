@@ -76,6 +76,10 @@ body {
   background-image: url(img/appStore.png);
 }
 
+#logoFirst {
+  background-image: url(img/logo.png);
+}
+
 #logoFin {
   background-image: url(img/logo_last.png);
 }
@@ -83,25 +87,50 @@ body {
 span.link {
   cursor: pointer;
   display: inline-block;
-  height: 48px;
   width: 147px;
+  height: 48px;
 }
 
 span.logoCut {
   display: inline-block;
-  height: 67px;
-  width: 226px;
+  width: 225px;
+  height: 66px;
 }
 
 @media all and (-webkit-min-device-pixel-ratio: 1.5) {
-  #appStore { background-image: url(img/appStore@2x.png);   }
-  #gooPlay  { background-image: url(img/googlePlay@2x.png); }
-  #logoFin  { background-image: url(img/logo_last@2x.png); }
+  #appStore   { background-image: url(img/appStore@2x.png);   }
+  #gooPlay    { background-image: url(img/googlePlay@2x.png); }
+  #logoFirst  { background-image: url(img/logo@2x.png);       }
+  #logoFin    { background-image: url(img/logo_last@2x.png);  }
 
   span.link     { width: 292px;   height: 94px;   }
   span.logoCut  { width: 450px;   height: 132px;  }
 }
 
+
+#twoPhone {
+  display: block;
+  position: absolute;
+  top: 4%;
+  height: 96%;
+  width: 96%;
+  left: 1%;
+  background-image: url(img/p1_ios.png);
+  background-size: cover;
+  background-position: center;
+  z-index: 16;
+}
+
+#twoPhone span {
+  font-size: 1em;
+  margin-right: 0.8em;
+  color: #8fe4ff;
+  cursor: pointer;
+}
+
+#twoPhone span:hover {
+  color: #fff;
+}
 
 #mockup {
   background-image: url(img/mockup.png);
@@ -220,10 +249,10 @@ span.logoCut {
   margin-top: 1.2em;
   position: relative;
   display: block;
-  font-size: 15pt;
+  font-size: 1em;
   cursor: pointer;
   color: #8fe4ff;
-  padding-left: 40px;
+  padding-left: 2em;
 }
 
 #watch:before {
@@ -290,7 +319,7 @@ span.logoCut {
 .container {
   position: absolute;
   width: 80%;
-  height: 60%;
+  height: 75%;
   left: 10%;
   top: 20%;
 }
@@ -304,7 +333,21 @@ span.logoCut {
 .container-left {
   position: absolute;
   width: 50%;
+  height: 100%;
   left: 0;
+}
+
+#twoPhone .container-left {
+  width: 60%;
+  height: 90%;
+}
+
+.bot {
+  position: absolute;
+  bottom: 0;
+}
+.bot.center {
+  width: 100%;
 }
 
 .container2 {
@@ -329,7 +372,7 @@ p.text {
 }
 
 p.lead {
-  font-size: 1.4em;
+  font-size: 1.8em;
 }
 
 .container-mid {
@@ -351,7 +394,6 @@ p.lead {
 }
 
 .center {
-  height: 100%;
   text-align: center;
 }
 

@@ -188,7 +188,7 @@ var onScroll = function () {
 
 var onResize = function () {
   h = Size.h();
-  document.body.style.fontSize = Size.w() / 90 + 'pt';
+  document.body.style.fontSize = Size.w() / 110 + 'pt';
   if (Size.w()/Size.h()>1.77) {
     scr4.el.style.fontSize = Size.w() / 90 + 'pt';
     toLong.style.height = 58*(Size.w()/Size.h())/1.77 + '%'
@@ -208,7 +208,8 @@ var onResize = function () {
 
 onEvent(window, 'scroll', onScroll);
 onEvent(window, 'resize', onResize);
-onEvent(window, 'load', onResize);
+
+onResize();
 
 onEvent(arrow.el, 'click', function () { 
   window.scrollBy( 0, 100 ); 
