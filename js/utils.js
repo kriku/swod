@@ -8,8 +8,18 @@
  * classie.toggle( elem, 'my-class' )
 
  expand by kriku
+ 
  + Ajax
+ 
  + onEvent
+ 
+ + window.Size { w: function () { return widnow width }, h: function () { return window height } }
+ 
+ + window.Scroll { x: function () { return widnow scroll x }, y: function () { return window scroll y } }
+
+ + setLimit(function () {}, n) - limit the rate at which this function can be called to n times in second
+  // if n equal zero function will start just one time
+
  */
 
 /*jshint browser: true, strict: true, undef: true */
