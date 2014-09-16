@@ -20,13 +20,16 @@ var scr0 = new Slide(document.getElementById('scr0')),
     scr5 = new Slide(document.getElementById('scr5')),
     fing = new Slide(document.getElementById('fingers')),
     mock = new Slide(document.getElementById('mockup')),
-    arrow = document.getElementById('arrow'),
+    arrow = new Slide(document.getElementById('arrow')),
+    video = new Slide(document.getElementById('video')),
     labels = document.getElementById('labels'),
     toLong = document.getElementById('toLong'),
     digits = document.getElementById('digits'),
     appStore = document.getElementById('appStore'),
     gooPlay = document.getElementById('gooPlay'),
     more = document.getElementById('more'),
+    watch = document.getElementById('watch'),
+    unwatch = document.getElementById('unwatch'),
     imbue = document.getElementById('imbue');
 
 window.scrollTo(0, 0);
@@ -59,7 +62,7 @@ var toSlide = function (oldslide, slide) {
     imbue.className = 'pos' + ( slide - 3 );
   }
   if (slide==oldslide) {
-    c.remove(arrow, 'hide');
+    arrow.show();
     if ((slide>0)&&(slide<8)) {
       c.add(labels, 'show');
     } else {
@@ -82,34 +85,42 @@ var toSlide = function (oldslide, slide) {
         labels.innerHTML = "Приложение SWOD поможет разрешить любой вопрос о спорте, фитнесе и хобби!";
       break;
     }
-    (slide==8) && c.add(arrow, 'hide');
+    (slide==8) && arrow.hide();
   } else {
     ((slide>4)&&(slide<8)) || c.remove(labels, 'show');
     ((slide==4)&&(oldslide>slide)) && c.add(labels, 'show');
-    c.add(arrow, 'hide');
+
+    arrow.hide();
+
     if ((slide>1)&&(slide<4)) {
-      c.remove(arrow, 'hide');
+      arrow.show();
     }
+
     if ((slide>4)&&(slide<8)) {
       scr4.fixed();
-      (oldslide<8) && c.remove(arrow, 'hide');
+      (oldslide<8) && arrow.show();
     } else {
       ((slide==4)&&(oldslide>slide)) || scr4.unfixed();
     }
+
     if ((slide>2)&&(slide<9)) {
       c.add(mock.el, 'left');
     } else {
       c.remove(mock.el, 'left');
     }
+
     if ((slide==3)&&(oldslide>slide)) {
-      c.add(arrow, 'hide');
+      arrow.hide();
     }
+
     if ((slide==4)&&(oldslide>slide)) {
-      c.remove(arrow, 'hide');
+      arrow.show();
     }
+
     if ((slide==1)&&(oldslide>slide)) {
-      c.remove(arrow, 'hide');
+      arrow.show();
     }
+
     if ((slide==0)||(oldslide==0)) {
       mock.show();
       fing.show();
@@ -119,8 +130,9 @@ var toSlide = function (oldslide, slide) {
       scr1.unscroll();
       fing.unscroll();
     }
+
     if ((slide==8)||(oldslide==8)) {
-      c.add(arrow, 'hide');
+      arrow.hide();
       mock.unfixed();
       c.add(mock.el, 'scr7');
       c.add(scr4.el, 'scr7');
@@ -129,7 +141,9 @@ var toSlide = function (oldslide, slide) {
       c.remove(mock.el, 'scr7');
       c.remove(scr4.el, 'scr7');
     }
+
     (oldslide==8) && scr4.unfixed();
+
   }
 }
 
@@ -194,12 +208,28 @@ var onResize = function () {
 onEvent(window, 'scroll', onScroll);
 onEvent(window, 'resize', onResize);
 onEvent(window, 'load', onResize);
-onEvent(arrow, 'click', function () { window.scrollBy( 0, 100 ); });
+
+onEvent(arrow.el, 'click', function () { 
+  window.scrollBy( 0, 100 ); 
+});
+
 onEvent(appStore, 'click', function () {
   more.style.display = 'block';
 });
+
 onEvent(gooPlay, 'click', function () {
   more.style.display = 'block';
 });
 
+onEvent(watch, 'click', function () {
+  video.show();
+  arrow.hide();
+  document.body.style.overflow = 'hidden';
+});
+
+onEvent(unwatch, 'click', function () {
+  video.hide();
+  arrow.show();
+  document.body.style.overflow = 'visible';
+});
 } )(window);

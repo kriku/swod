@@ -117,7 +117,7 @@ body {
   background-image: url(img/arrow.png);
   background-position: center;
   background-repeat: no-repeat;
-  z-index: 45;
+  z-index: 29;
   transition: all 0.2s;
 }
 
@@ -266,7 +266,7 @@ p {
 }
 
 p.lead {
-  font-size: 1.5em;
+  font-size: 1.4em;
 }
 
 .container-mid {
@@ -284,4 +284,37 @@ p.lead {
 
 img.link {
   cursor: pointer;
+}
+
+#video {
+  background-color: rgba(0, 153, 204, 0.8);
+  z-index: 30;
+}
+
+.center {
+  height: 100%;
+  text-align: center;
+}
+
+.center img {
+margin-top: 4em;
+}
+
+span.close {
+  position: absolute;
+  cursor: pointer;
+  top: 4em;
+  right: 4em;
+}
+
+span.close:before {
+  content: ' ';
+  display: block;
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  background: url(img/close.png);
+}
+span.close:hover:before {
+  background-position: -19px 0;
 }
