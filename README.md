@@ -1,1 +1,1 @@
-SWOD - Social Workout of Day
+#SWOD - Social Workout of Day
