@@ -27,14 +27,6 @@ body {
   height: 100%;
 }
 
-.slide.w {
-  background-size: 100% auto;
-}
-
-.slide.h {
-  background-size: auto 100%;
-}
-
 .slide.scroll {
   background-attachment: scroll!important;
 }
@@ -237,6 +229,10 @@ p.lead {
   height: 60%;
   left: 20%;
   top: 20%;
+}
+
+.container-mid > img {
+  cursor: pointer;
 }
 
 .container-mid div {
