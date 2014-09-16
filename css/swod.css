@@ -204,7 +204,7 @@ body {
 }
 
 #more input[type="text"] {
-  font-size: 1em;
+  font-size: 1.2em;
   margin: 0;
   border-radius: 20px 0 0 20px;
   height: 30px;
@@ -221,7 +221,7 @@ body {
 #more input[type="button"] {
   margin: 0;
   color: #fff;
-  font-size: 1em;
+  font-size: 1.2em;
   padding: 5px 20px;
   border-radius: 0 20px 20px 0;
   border: 2px solid #00a0d2;
@@ -261,8 +261,9 @@ body {
   font-size: 1.4em;
 }
 
-p {
+p.text {
   font-size: 0.8em;
+  margin-bottom: 2.2em;
 }
 
 p.lead {
