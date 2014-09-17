@@ -51,21 +51,12 @@ body {
 #scr0 {
   background-image: url(img/1.png);
   background-attachment: scroll;
+  background-position: center;
   top: 0;
   color: #fff;
   z-index: 15;
 }
 
-/* retina fix*/
-@media all and (-webkit-min-device-pixel-ratio: 1.5) {
-  #scr0     { background-image: url(img/1@2x.png);        }
-  #scr1     { background-image: url(img/2@2x.png);        }
-  #scr2     { background-image: url(img/3@2x.png);        }
-  #scr3     { background-image: url(img/4@2x.png);        }
-  #scr4     { background-image: url(img/5@2x.png);        }
-  #mockup   { background-image: url(img/mockup@2x.png);   }
-  #fingers  { background-image: url(img/fingers@2x.png);  }
-}
 
 
 #gooPlay {
@@ -84,30 +75,7 @@ body {
   background-image: url(img/logo_last.png);
 }
 
-span.link {
-  cursor: pointer;
-  display: inline-block;
-  width: 147px;
-  height: 48px;
-}
-
-span.logoCut {
-  display: inline-block;
-  width: 225px;
-  height: 66px;
-}
-
-@media all and (-webkit-min-device-pixel-ratio: 1.5) {
-  #appStore   { background-image: url(img/appStore@2x.png);   }
-  #gooPlay    { background-image: url(img/googlePlay@2x.png); }
-  #logoFirst  { background-image: url(img/logo@2x.png);       }
-  #logoFin    { background-image: url(img/logo_last@2x.png);  }
-
-  span.link     { width: 292px;   height: 94px;   }
-  span.logoCut  { width: 450px;   height: 132px;  }
-}
-
-
+/*
 #twoPhone {
   display: block;
   position: absolute;
@@ -128,9 +96,10 @@ span.logoCut {
   cursor: pointer;
 }
 
-#twoPhone span:hover {
+#twoPhone span:hover,
+#twoPhone span.active, {
   color: #fff;
-}
+}*/
 
 #mockup {
   background-image: url(img/mockup.png);
@@ -188,18 +157,32 @@ span.logoCut {
 #arrow {
   position: fixed;
   bottom: 0;
-  width: 100%;
-  height: 35px;
+  left: 50%;
+  margin-left: -35px;
+  width: 71px;
+  height: 33px;
   background-image: url(img/arrow.png);
   background-position: center;
   background-repeat: no-repeat;
+  background-size: 100%;
   z-index: 29;
+  cursor: pointer;
   transition: all 0.2s;
 }
-
+  
 #arrow.hide {
   display: block;
   bottom: -35px;
+}
+@media all and (-webkit-min-device-pixel-ratio: 1.5) {
+  #arrow {
+    width: 142px;
+    height: 66px;
+    margin-left: -71px;
+  }
+  #arrow.hide {
+    bottom: -66px;
+  }
 }
 
 #labels {
@@ -243,35 +226,6 @@ span.logoCut {
 }
 #imbue.pos4 {
   top: 75%;
-}
-
-#watch {
-  margin-top: 1.2em;
-  position: relative;
-  display: block;
-  font-size: 1em;
-  cursor: pointer;
-  color: #8fe4ff;
-  padding-left: 2em;
-}
-
-#watch:before {
-  content: ' ';
-  display: block;
-  position: absolute;
-  width: 30px;
-  height: 31px;
-  background: url(img/video.png);
-  left: 0;
-  top: -2px;
-}
-
-#watch:hover {
-  color: #fff;
-}
-
-#watch:hover:before {
-  background-position: -30px 0;
 }
 
 #more {
@@ -326,13 +280,13 @@ span.logoCut {
 
 .container-right {
   position: absolute;
-  width: 50%;
+  width: 44%;
   right: 0;
 }
 
 .container-left {
   position: absolute;
-  width: 50%;
+  width: 52%;
   height: 100%;
   left: 0;
 }
@@ -401,21 +355,61 @@ p.lead {
 margin-top: 4em;
 }
 
+span.stores {
+  cursor: pointer;
+  display: inline-block;
+  width: 147px;
+  height: 48px;
+}
+
+span.logoCut {
+  display: inline-block;
+  width: 225px;
+  height: 66px;
+}
+
 span.close {
   position: absolute;
   cursor: pointer;
-  top: 4em;
-  right: 4em;
+  top: 2em;
+  right: 2em;
 }
 
-span.close:before {
-  content: ' ';
-  display: block;
-  position: absolute;
-  width: 18px;
-  height: 18px;
-  background: url(img/close.png);
+span.link {
+  font-size: 1.4em;
+  color: #8fe4ff;
+  margin-right: 1em;
+  cursor: pointer;
 }
-span.close:hover:before {
-  background-position: -19px 0;
+
+span.link:hover {
+  color: #fff;
+}
+
+span.link i {
+  font-size: 110%;
+  margin-right: 0.2em;
+}
+
+
+
+/* retina fix*/
+@media all and (-webkit-min-device-pixel-ratio: 1.5) {
+  #scr0     { background-image: url(img/1@2x.png);        }
+  #scr1     { background-image: url(img/2@2x.png);        }
+  #scr2     { background-image: url(img/3@2x.png);        }
+  #scr3     { background-image: url(img/4@2x.png);        }
+  #scr4     { background-image: url(img/5@2x.png);        }
+  #mockup   { background-image: url(img/mockup@2x.png);   }
+  #fingers  { background-image: url(img/fingers@2x.png);  }
+}
+
+@media all and (-webkit-min-device-pixel-ratio: 1.5) {
+  #appStore   { background-image: url(img/appStore@2x.png);   }
+  #gooPlay    { background-image: url(img/googlePlay@2x.png); }
+  #logoFirst  { background-image: url(img/logo@2x.png);       }
+  #logoFin    { background-image: url(img/logo_last@2x.png);  }
+
+  span.stores     { width: 292px;   height: 94px;   }
+  span.logoCut  { width: 450px;   height: 132px;  }
 }
