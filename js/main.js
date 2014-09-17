@@ -152,11 +152,14 @@ var toSlide = function (oldslide, slide) {
   }
 } else {
   c.add(mock.el, 'left');
+
   if ((oldslide==0)||(slide==0)) {
+    arrow.hide();
     scr4.unfixed();
   } else {
     scr4.fixed();
   }
+
   if ((slide==5)||(oldslide)==5) {
     arrow.hide();
     mock.unfixed();
@@ -169,9 +172,20 @@ var toSlide = function (oldslide, slide) {
     c.remove(scr4.el, 'on4');
   }
 
+  if ((slide>0)&&(slide<5)) {
+    c.add(labels, 'show');
+  } else {
+    c.remove(labels, 'show');
+  }
+
   if ((slide>=1)&&(slide<=4)) {
     imbue.className = 'pos' + slide;
   }
+
+  if ((slide==oldslide)&&((slide==0)||(slide==1)||(slide==4))) {
+    arrow.show();
+  }
+
 }
 
 }
@@ -313,6 +327,7 @@ onEvent(scen2, 'click', function () {
   scensLi[1].innerHTML = 'Кто ещё лучше всех учит плавать в моем городе';
   scensLi[2].innerHTML = 'Где наконец играть в волейбол этим летом';
   scensLi[3].innerHTML = 'Куда отправиться в поисках условий для экстремального спорта';
+  labels.innerHTML = "Приложение SWOD поможет разрешить любой вопрос о спорте, фитнесе и хобби!";
 });
 
 } )(window);
