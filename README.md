@@ -2,4 +2,4 @@
 
 Just vanilla-js, background-size, some type scaling
 
-http://kriku.github.io
+http://kriku.github.io/swod/
