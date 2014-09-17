@@ -236,4 +236,24 @@ onEvent(unwatch, 'click', function () {
   arrow.show();
   document.body.style.overflow = 'visible';
 });
+
+var toAnd = document.getElementById('toAnd'),
+    toIos = document.getElementById('toIos'),
+    phoneMain = document.getElementById('phoneMain'),
+    phoneSub = document.getElementById('phoneSub');
+
+onEvent(toAnd, 'click', function () {
+  c.add(toAnd, 'active');
+  c.remove(toIos, 'active');
+  phoneMain.className = 'phoneAnd';
+  phoneSub.className = 'phoneIos';
+});
+
+onEvent(toIos, 'click', function () {
+  c.remove(toAnd, 'active');
+  c.add(toIos, 'active');
+  phoneMain.className = 'phoneIos';
+  phoneSub.className = 'phoneAnd';
+});
+
 } )(window);
