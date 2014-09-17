@@ -148,8 +148,11 @@ body {
   z-index: 7;
 }
 
-.scr7 {
+.on7 {
   top: 700%!important;
+}
+.on4 {
+  top: 400%!important;
 }
 
 #scr5 {
@@ -319,6 +322,13 @@ body {
   margin-bottom: 1em;
 }
 
+.buttons {
+  position: absolute;
+  top: -4em;
+  width: 100%;
+  text-align: center;
+}
+
 #video {
   background-color: rgba(0, 153, 204, 0.8);
   z-index: 30;
@@ -361,8 +371,40 @@ span.close {
   right: 2em;
 }
 
+span.bttn {
+  font-weight: 400;
+  border: 1px solid;
+  color: #8fe4ff;
+  padding: 0.3em 1em;
+  margin-right: 1em;
+  border-radius: 2em;
+  position: relative;
+}
+
+span.bttn:hover,
+span.bttn.active {
+  background: #fff;
+  border: 1px solid #fff;
+  color: #0099cc;
+  cursor: pointer;
+}
+
+span.bttn.active:after {
+  content: ' ';
+  display: block;
+  position: absolute;
+  left: 47%;
+  bottom: -0.3em;
+  width: 0;
+  height: 0;
+  border-left: 0.5em solid transparent;
+  border-right: 0.5em solid transparent;
+  border-top: 0.4em solid #fff;
+}
+
 span.link {
-  font-size: 1.4em;
+  /*font-weight: 400;*/
+  font-size: 1.2em;
   color: #8fe4ff;
   margin-right: 1em;
   cursor: pointer;

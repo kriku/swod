@@ -41,9 +41,11 @@ var y = oldy = Scroll.y(),
     scrollInt,
     slide = oldslide = 0,
     slides = [scr0, scr1, scr2, scr3, scr4, scr4, scr4, scr4, scr5];
-    otherSlides = [scr0, scr1, scr2, scr3, scr4, scr5];
+    otherSlides = [scr0, scr1, scr2, scr3, scr4, scr5],
+    isScen2 = false;
 
 var toSlide = function (oldslide, slide) {
+  if (!isScen2) {
   // scr0.hide();
   // scr1.hide();
   // scr2.hide();
@@ -137,17 +139,41 @@ var toSlide = function (oldslide, slide) {
     if ((slide==8)||(oldslide==8)) {
       arrow.hide();
       mock.unfixed();
-      c.add(mock.el, 'scr7');
-      c.add(scr4.el, 'scr7');
+      c.add(mock.el, 'on7');
+      c.add(scr4.el, 'on7');
     } else {
       mock.fixed();
-      c.remove(mock.el, 'scr7');
-      c.remove(scr4.el, 'scr7');
+      c.remove(mock.el, 'on7');
+      c.remove(scr4.el, 'on7');
     }
 
     (oldslide==8) && scr4.unfixed();
 
   }
+} else {
+  c.add(mock.el, 'left');
+  if ((oldslide==0)||(slide==0)) {
+    scr4.unfixed();
+  } else {
+    scr4.fixed();
+  }
+  if ((slide==5)||(oldslide)==5) {
+    arrow.hide();
+    mock.unfixed();
+    scr4.unfixed();
+    c.add(mock.el, 'on4');
+    c.add(scr4.el, 'on4');
+  } else {
+    mock.fixed();
+    c.remove(mock.el, 'on4');
+    c.remove(scr4.el, 'on4');
+  }
+
+  if ((slide>=1)&&(slide<=4)) {
+    imbue.className = 'pos' + slide;
+  }
+}
+
 }
 
 toSlide(0, 0);
@@ -240,7 +266,8 @@ onEvent(unwatch, 'click', function () {
 var toAnd = document.getElementById('toAnd'),
     toIos = document.getElementById('toIos'),
     phoneMain = document.getElementById('phoneMain'),
-    phoneSub = document.getElementById('phoneSub');
+    phoneSub = document.getElementById('phoneSub'),
+    scensLi = document.getElementsByTagName('LI');
 
 onEvent(toAnd, 'click', function () {
   c.add(toAnd, 'active');
@@ -254,6 +281,38 @@ onEvent(toIos, 'click', function () {
   c.add(toIos, 'active');
   phoneMain.className = 'phoneIos';
   phoneSub.className = 'phoneAnd';
+});
+
+var scen1 = document.getElementById('scen1'),
+    scen2 = document.getElementById('scen2'),
+    hideScen2 = document.getElementById('hideScen2');
+
+onEvent(scen1, 'click', function () {
+  c.add(scen1, 'active');
+  c.remove(scen2, 'active');
+  hideScen2.style.display = '';
+  document.body.style.height = '';
+  scr4.el.style.top = '';
+  scr5.el.style.top = '';
+  isScen2 = false;
+  scensLi[0].innerHTML = 'Как построить фигуру мечты';
+  scensLi[1].innerHTML = 'Кто лучше всех учит плавать в моем городе';
+  scensLi[2].innerHTML = 'Где играть в волейбол этим летом';
+  scensLi[3].innerHTML = 'Куда отправиться в поисках условий для экстремального спорта';
+});
+
+onEvent(scen2, 'click', function () {
+  c.add(scen2, 'active');
+  c.remove(scen1, 'active');
+  hideScen2.style.display = 'none';
+  document.body.style.height = '600%';
+  scr4.el.style.top = '100%';
+  scr5.el.style.top = '500%';
+  isScen2 = true;
+  scensLi[0].innerHTML = 'Как построить другую фигуру мечты';
+  scensLi[1].innerHTML = 'Кто ещё лучше всех учит плавать в моем городе';
+  scensLi[2].innerHTML = 'Где наконец играть в волейбол этим летом';
+  scensLi[3].innerHTML = 'Куда отправиться в поисках условий для экстремального спорта';
 });
 
 } )(window);
