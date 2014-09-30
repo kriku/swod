@@ -464,20 +464,6 @@ span.link i {
   span.stores     { width: 292px;   height: 94px;   }
   span.logoCut  { width: 450px;   height: 132px;  }
 
-  #phoneMain { width: 425px; height: 792px; }
-  #phoneSub { top: 42px; width: 380px; height: 708px; }
-
-  #phoneMain {
-    width: 425px;
-    height: 792px;
-  }
-
-  #phoneSub {
-    top: 42px;
-    width: 380px;
-    height: 708px;
-  }
-
   .phones {
     position: relative;
     margin: 3em auto;
