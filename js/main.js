@@ -209,10 +209,10 @@ var onScroll = function () {
     oldslide = slide;
     if (y - oldy > 0) {
       toSlide(oldslide, slide + 1);
-      scrollInt = scrolling( 30, 70 )
+      scrollInt = scrolling( 40, 80 )
     } else if (y - oldy < 0) {
       toSlide(oldslide, slide - 1);
-      scrollInt = scrolling( 30, -70 )
+      scrollInt = scrolling( 40, -80 )
     }
   } else {
     if (Math.abs(y/h - oldslide)>0.8) {
@@ -227,22 +227,30 @@ var onScroll = function () {
   }
 }
 
+var phones = document.getElementById('phones');
 
 var onResize = function () {
   h = Size.h();
-  document.body.style.fontSize = Size.w() / 110 + 'pt';
+  document.body.style.fontSize = Size.w() / 120 + 'pt';
   if (Size.w()/Size.h()>1.77) {
     scr4.el.style.fontSize = Size.w() / 90 + 'pt';
     toLong.style.height = 58*(Size.w()/Size.h())/1.77 + '%'
-    toLong.style.top =53 - 26*(Size.w()/Size.h())/1.77 + '%';
+    toLong.style.top = 53 - 26*(Size.w()/Size.h())/1.77 + '%';
     digits.style.height = 58*(Size.w()/Size.h())/1.77 + '%'
-    digits.style.top =53 - 26*(Size.w()/Size.h())/1.77 + '%';
+    digits.style.top = 53 - 26*(Size.w()/Size.h())/1.77 + '%';
+    // phones.style.left = null;
+    phones.style.marginLeft = 40 + 10*(Size.w()/Size.h())/1.77 + '%';
+    phones.style.height = 80-80*(Size.w()/Size.h())/1.77 + '%';
   } else {
     scr4.el.style.fontSize = Size.h() / 50 + 'pt';
     toLong.style.height = '58%';
     toLong.style.top = '26%';
     digits.style.height = '58%';
     digits.style.top = '26%';
+    phones.style.marginLeft = 50 - (1.77*Size.h()/Size.w()-1)*100 + '%';
+    // phones.style.marginLeft = null;
+    // phones.style.left = - 40*(Size.w()/Size.h())/1.77 + '%';
+    phones.style.height=  '82%';
   }
   labels.style.fontSize = Size.h() / 30 + 'pt';
 }

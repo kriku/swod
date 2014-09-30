@@ -76,35 +76,37 @@ body {
 
 
 #phoneMain {
-  width: 212px;
-  height: 395px;
+  width: 100%;
+  height: 100%;
 }
 
 #phoneSub {
-  top: 21px;
-  width: 190px;
-  height: 354px;
+  top: 5%;
+  width: 100%;
+  height: 90%;
 }
 
 .phones {
   position: relative;
-  margin: 0 auto;
-  width: 300px;
-  height: 450px;
+  margin-left: 50%;
+  width: 100%;
+  height: 80%;
 }
 
 .phoneIos {
   background-image: url(img/ios_p1.png);
-  background-size: 100%;
+  background-size: auto 100%;
+  background-repeat: no-repeat;
   position: absolute;
-  left: 0;
+  left: -30%;
 }
 
 .phoneAnd {
   background-image: url(img/android_p1.png);
-  background-size: 100%;
+  background-size: auto 100%;
+  background-repeat: no-repeat;
   position: absolute;
-  right: 0;
+  left: -10%;
 }
 
 #mockup {
@@ -234,7 +236,7 @@ body {
 
 #more input[type="text"] {
   background: #eee;
-  font-size: 1em;
+  font-size: 1.2em;
   margin: 0;
   border-radius: 20px 0 0 20px;
   padding: 0.2em 1em;
@@ -249,7 +251,7 @@ body {
 #more input[type="button"] {
   background: #00a0d2;
   color: #fff;
-  font-size: 1em;
+  font-size: 1.2em;
   margin: 0;
   padding: 0.2em 1em;
   border-radius: 0 20px 20px 0;
@@ -282,12 +284,11 @@ body {
   position: absolute;
   width: 48%;
   height: 100%;
-  left: 0;
 }
 
 .bot {
-  position: absolute;
-  bottom: 0;
+  position: relative;
+  bottom: -1em;
 }
 
 .bot.center {
@@ -339,12 +340,23 @@ body {
   text-align: center;
 }
 
+.center.bot {
+  position: absolute;
+  margin-left: -50%;
+  bottom: -3em;
+}
+
 .center img {
 margin-top: 4em;
 }
 
-p.text {
-  font-size: 0.8em;
+p.text1 {
+  font-size: 1.1em;
+  margin-bottom: 2.2em;
+}
+
+p.text2 {
+  font-size: 1.2em;
   margin-bottom: 2.2em;
 }
 
@@ -405,9 +417,9 @@ span.bttn.active:after {
 
 span.link {
   /*font-weight: 400;*/
-  font-size: 1.2em;
+  font-size: 1.3em;
   color: #8fe4ff;
-  margin-right: 1em;
+  margin-left: 1em;
   cursor: pointer;
 }
 
